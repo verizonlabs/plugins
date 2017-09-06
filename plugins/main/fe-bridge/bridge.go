@@ -419,9 +419,6 @@ func cmdAdd(args *skel.CmdArgs) error {
 		return err
 	}
 
-        println("add --- n.Args.A.IPArgs value is", n.Args)
-        println("add --- n.Args.A.IPArgs value is", n.Args.A)
-
 	if len(result.IPs) == 0 {
 		return errors.New("IPAM plugin returned missing IP config")
 	}
@@ -618,9 +615,6 @@ func cmdDel(args *skel.CmdArgs) error {
 	println("delete - viaIP", viaIP)
 	println("delete - Uplink", Uplink)
 	
-	println("delete --- n.Args.A.IPArgs value is", n.Args)
-        println("delete --- n.Args.A.IPArgs value is", n.Args.A)
-
 	// There is a netns so try to clean up. Delete can be called multiple times
 	// so don't return an error if the device is already removed.
 	// If the device isn't there then don't try to clean up IP masq either.
